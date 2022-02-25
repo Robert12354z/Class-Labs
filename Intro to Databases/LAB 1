@@ -1,0 +1,163 @@
+Question 1:
+use lyrics;
+describe members;
+select MemberID, FirstName, LastName, Address, City, Region, PostalCode,Country 
+,HomePhone, WorkPhone, EMail, Gender, Birthday, SalesID from Members;
+
+Output:
++----------+-----------+-----------+----------------------+--------------+--------+------------+---------+------------+------------+------------------------+--------+------------+---------+
+| MemberID | FirstName | LastName  | Address              | City         | Region | PostalCode | Country | HomePhone  | WorkPhone  | EMail                  | Gender | Birthday   | SalesID |
++----------+-----------+-----------+----------------------+--------------+--------+------------+---------+------------+------------+------------------------+--------+------------+---------+
+|       10 | Roberto   | Alvarez   | Rt 1                 | Anderson     | IN     | 46019      | USA     | 7651552983 | 7651628837 | ral@mightyhostl.com    | M      | 1968-01-18 |       2 |
+|       31 | Jose      | MacArthur | 51444 Vine           | Santa Rosa   | CA     | 99999      | USA     | 6331289393 | NULL       | jmac@dowop.com         | M      | 1978-06-24 |       1 |
+|       13 | Mary      | Chrisman  | 1772 East 117th      | Fishers      | IN     | 46123      | USA     | 3171820387 | NULL       | mjc17@daviscorp.com    | F      | 1973-03-01 |       1 |
+|       15 | Warren    | Boyer     | 167 Alamo Dr         | Alverez      | TX     | 75601      | USA     | 8221722883 | NULL       | wbman@uptime.net       | M      | 1969-04-19 |       2 |
+|       32 | Doug      | Finney    | 2020 Dubois          | Savannah     | GA     | 30003      | USA     | 9821222929 | NULL       | fennyd@bitspeed.com    | M      | 1963-08-04 |       3 |
+|       19 | Terry     | Irving    | 18a 7th St           | Tybee Island | GA     | 30004      | USA     | 5411252093 | NULL       | NULL                   | M      | 1959-06-22 |       3 |
+|       21 | Michelle  | Henderson | 201 Bonaventure      | Savannah     | GA     | 30005      | USA     | 8221928273 | NULL       | NULL                   | F      | 1964-03-15 |       2 |
+|       34 | William   | Morrow    | PO Box 1882          | New Rochelle | NY     | 10014      | USA     | 9981722928 | NULL       | wmorrow@wmorrow.com    | M      | 1965-03-17 |       2 |
+|       29 | Frank     | Payne     | 5412 Clinton         | New Rochelle | NY     | 10014      | USA     | 9981737464 | NULL       | NULL                   | M      | 1960-01-17 |       1 |
+|       35 | Aiden     | Franks    | 167 East 38th        | Alverez      | TX     | 75601      | USA     | 8321729283 | 8321723833 | kosmo@ispl.com         | M      | 1983-09-02 |       2 |
+|        3 | Bryce     | Sanders   | PO Box 1292          | Peterson     | NC     | 27104      | USA     | 6441824283 | NULL       | bs@cookery.com         | M      | 1966-06-11 |       2 |
+|       14 | Carol     | Wanner    | 787 Airport Rd       | Alverez      | TX     | 75601      | USA     | 6831223944 | NULL       | NULL                   | F      | 1978-11-08 |       3 |
+|       33 | Brian     | Ranier    | 23 Gregory Lane      | London       | ONT    | M6Y 2Y7    | Canada  | 6231842933 | NULL       | NULL                   | M      | 1957-10-19 |       3 |
+|        7 | Marcellin | Lambert   | 142 Sample Rd        | Alexandria   | VA     | 20102      | USA     | 8331929302 | NULL       | mlambert@corkscrew.com | M      | 1959-11-14 |       3 |
+|        8 | Caroline  | Kale      | 1515 Stone Church Rd | Allen        | VA     | 20321      | USA     | 7321223742 | NULL       | NULL                   | F      | 1956-05-30 |       3 |
+|        9 | Kerry     | Fernandez | 15 Midway            | Lynchberg    | VA     | 21223      | USA     | 2211229384 | 2211223939 | NULL                   | M      | 1962-01-16 |       1 |
+|       26 | Tony      | Wong      | 115 Maple St         | McKensie     | ONT    | M8H 3T1    | Canada  | 3311692832 | 3311692822 | twong@tamilla.org      | M      | 1955-11-01 |       2 |
+|       18 | Bonnie    | Taft      | RR4                  | Alamaba      | VT     | 05303      | USA     | 3721223292 | NULL       | taffygirl@signon.com   | F      | 1960-09-21 |       1 |
+|       20 | Louis     | Holiday   | 15 Davis Ct          | Clinton      | IL     | 63882      | USA     | 1451223838 | NULL       | NULL                   | M      | 1969-07-27 |       2 |
+|       22 | Bobby     | Crum      | RR2                  | Pine         | VT     | 05412      | USA     | 1831828211 | NULL       | NULL                   | M      | 1965-06-10 |       3 |
+|       28 | Vic       | Cleaver   | 100 Maple            | Reston       | VT     | 05544      | USA     | 8111839292 | NULL       | NULL                   | M      | 1957-02-10 |       2 |
+|       30 | Roberto   | Goe       | 14 Gray Rd           | Columbus     | OH     | 48110      | USA     | 2771123943 | NULL       | NULL                   | M      | 1967-09-12 |       1 |
+|       36 | Davis     | Goodman   | 2020 Country Rd      | Columbus     | OH     | 48318      | USA     | 2771152882 | 2771128833 | goody@irvingnet.com    | M      | 1980-10-27 |       2 |
++----------+-----------+-----------+----------------------+--------------+--------+------------+---------+------------+------------+------------------------+--------+------------+---------+
+
+Question 2: 
+use lyrics;
+describe genre;
+select genre from genre 
+
+Output:
++-------------+
+| genre       |
++-------------+
+| alternative |
+| classical   |
+| jazz        |
+| metal       |
+| R&B         |
+| rap         |
+| pop         |
++-------------+
+
+Question 3:
+select Title, UPC, Genre from titles;
+Output:
++--------------------+------------+-------------+
+| Title              | UPC        | Genre       |
++--------------------+------------+-------------+
+| Meet the Neurotics | 2727366627 | alternative |
+| Smell the Glove    | 1283772282 | metal       |
+| Time Flies         | 1882344222 | alternative |
+| Neurotic Sequel    | 2828830202 | alternative |
+| Sonatas            | 3999320021 | classical   |
+| Louis at the Keys  | 3838227111 | jazz        |
++--------------------+------------+-------------+
+Question 4: 
+select Title, UPC, Genre from titles where ArtistID in ('2');
+Output:
++-------------------+------------+-------+
+| Title             | UPC        | Genre |
++-------------------+------------+-------+
+| Louis at the Keys | 3838227111 | jazz  |
++-------------------+------------+-------+
+Question 5:
+select FirstName, LastName, HomePhone, EMail from Members;
+Output:
++-----------+-----------+------------+------------------------+
+| FirstName | LastName  | HomePhone  | EMail                  |
++-----------+-----------+------------+------------------------+
+| Roberto   | Alvarez   | 7651552983 | ral@mightyhostl.com    |
+| Jose      | MacArthur | 6331289393 | jmac@dowop.com         |
+| Mary      | Chrisman  | 3171820387 | mjc17@daviscorp.com    |
+| Warren    | Boyer     | 8221722883 | wbman@uptime.net       |
+| Doug      | Finney    | 9821222929 | fennyd@bitspeed.com    |
+| Terry     | Irving    | 5411252093 | NULL                   |
+| Michelle  | Henderson | 8221928273 | NULL                   |
+| William   | Morrow    | 9981722928 | wmorrow@wmorrow.com    |
+| Frank     | Payne     | 9981737464 | NULL                   |
+| Aiden     | Franks    | 8321729283 | kosmo@ispl.com         |
+| Bryce     | Sanders   | 6441824283 | bs@cookery.com         |
+| Carol     | Wanner    | 6831223944 | NULL                   |
+| Brian     | Ranier    | 6231842933 | NULL                   |
+| Marcellin | Lambert   | 8331929302 | mlambert@corkscrew.com |
+| Caroline  | Kale      | 7321223742 | NULL                   |
+| Kerry     | Fernandez | 2211229384 | NULL                   |
+| Tony      | Wong      | 3311692832 | twong@tamilla.org      |
+| Bonnie    | Taft      | 3721223292 | taffygirl@signon.com   |
+| Louis     | Holiday   | 1451223838 | NULL                   |
+| Bobby     | Crum      | 1831828211 | NULL                   |
+| Vic       | Cleaver   | 8111839292 | NULL                   |
+| Roberto   | Goe       | 2771123943 | NULL                   |
+| Davis     | Goodman   | 2771152882 | goody@irvingnet.com    |
++-----------+-----------+------------+------------------------+
+Question 6:
+select MemberID from members where Gender in ('m');
+Output:
++----------+
+| MemberID |
++----------+
+|       10 |
+|       31 |
+|       15 |
+|       32 |
+|       19 |
+|       34 |
+|       29 |
+|       35 |
+|        3 |
+|       33 |
+|        7 |
+|        9 |
+|       26 |
+|       20 |
+|       22 |
+|       28 |
+|       30 |
+|       36 |
++----------+
+Question 7:
+select StudioName, WebAddress, EMail, Phone from studios where City in ('Santa Theresa');
+Output:
++-------------+----------------+-----------------+------------+
+| StudioName  | WebAddress     | EMail           | Phone      |
++-------------+----------------+-----------------+------------+
+| Pacific Rim | www.pacrim.org | harry@pcrim.org | 3811110033 |
++-------------+----------------+-----------------+------------+
+Question 8:
+select SalesID, FirstName, LastName, Initials, Base, Supervisor from salespeople where Base>200;
+Output:
++---------+-----------+----------+----------+--------+------------+
+| SalesID | FirstName | LastName | Initials | Base   | Supervisor |
++---------+-----------+----------+----------+--------+------------+
+|       2 | Lisa      | Williams | lmw      | 300.00 |          4 |
++---------+-----------+----------+----------+--------+------------+
+Question 9:
+select MemberID, Country from Members where Country='Canada';
+Output:
++----------+---------+
+| MemberID | Country |
++----------+---------+
+|       33 | Canada  |
+|       26 | Canada  |
++----------+---------+
+Question 10: 
+select FirstName, LastName, region from members where region in ('VA') and (WorkPhone is not null or EMail is not null);
+Output:
++-----------+-----------+--------+
+| FirstName | LastName  | region |
++-----------+-----------+--------+
+| Marcellin | Lambert   | VA     |
+| Kerry     | Fernandez | VA     |
++-----------+-----------+--------+
