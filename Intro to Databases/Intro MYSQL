@@ -1,0 +1,102 @@
+Q1: select FirstName,LastName,HomePhone,Gender from Members where region in ('GA') and (HomePhone Like '822%' or  Gender in ('f'));
++-----------+-----------+------------+--------+
+| FirstName | LastName  | HomePhone  | Gender |
++-----------+-----------+------------+--------+
+| Michelle  | Henderson | 8221928273 | F      |
++-----------+-----------+------------+--------+
+Q2:select TitleID,TrackNum,TrackTitle,LengthSeconds,RealAud from tracks where MP3 in ('null');
++---------+----------+------------+---------------+---------+
+| TitleID | TrackNum | TrackTitle | LengthSeconds | RealAud |
++---------+----------+------------+---------------+---------+
+|       3 |        7 | Wooden Man |           314 |       0 |
+|       3 |        8 | UPS        |            97 |       0 |
+|       3 |        9 | Empty      |           182 |       0 |
+|       3 |       10 | Burrito    |            65 |       0 |
++---------+----------+------------+---------------+---------+
+Q3: select TitleID, Title ,UPC from titles where UPC like '%2';
++---------+-----------------+------------+
+| TitleID | Title           | UPC        |
++---------+-----------------+------------+
+|       3 | Smell the Glove | 1283772282 |
+|       4 | Time Flies      | 1882344222 |
+|       5 | Neurotic Sequel | 2828830202 |
++---------+-----------------+------------+
+Q4:select ArtistName, WebAddress from artists where WebAddress is not NULL;
++----------------+--------------------------+
+| ArtistName     | WebAddress               |
++----------------+--------------------------+
+| The Neurotics  | www.theneurotics.com     |
+| Sonata         | www.classical.com/sonata |
+| Jose MacArthur | www.josemacarthur.com    |
+| Today          | www.today.com            |
+| 21 West Elm    | www.21westelm.com        |
++----------------+--------------------------+
+Q5: Select TitleID,TrackNum,TrackTitle from tracks where TrackTitle like 'Song%';
++---------+----------+----------------+
+| TitleID | TrackNum | TrackTitle     |
++---------+----------+----------------+
+|       5 |        1 | Song 1         |
+|       5 |        2 | Song 2         |
+|       5 |        3 | Song 3         |
+|       5 |        4 | Song 4         |
+|       5 |        5 | Song 5         |
+|       5 |        6 | Song 6         |
+|       5 |        7 | Song 7         |
+|       5 |        8 | Song 8         |
+|       5 |        9 | Song 8 and 1/2 |
++---------+----------+----------------+
+Q6: select Avg(LengthSeconds)/60,Min(LengthSeconds)/60,Max(LengthSeconds)/60 from tracks;
++-----------------------+-----------------------+-----------------------+
+| Avg(LengthSeconds)/60 | Min(LengthSeconds)/60 | Max(LengthSeconds)/60 |
++-----------------------+-----------------------+-----------------------+
+|            4.60133333 |                0.7500 |               13.6833 |
++-----------------------+-----------------------+-----------------------+
+Q7;  select Count(gender) from members where gender in ('m');
++---------------+
+| Count(gender) |
++---------------+
+|            18 |
++---------------+
+Q8:select count(TitleID) from tracks group by TitleID;
++----------------+
+| count(TitleID) |
++----------------+
+|              8 |
+|             10 |
+|             10 |
+|              9 |
+|              5 |
+|              8 |
++----------------+
+Q9: select SUM(LengthSeconds)/60 from Tracks group by TitleID;
++-----------------------+
+| SUM(LengthSeconds)/60 |
++-----------------------+
+|               37.2833 |
+|               35.4833 |
+|               36.8833 |
+|               34.7833 |
+|               44.3667 |
+|               41.2667 |
++-----------------------+
+Q10: select count(gender),gender, region from members group by Region, gender;
++---------------+--------+--------+
+| count(gender) | gender | region |
++---------------+--------+--------+
+|             1 | M      | IN     |
+|             1 | M      | CA     |
+|             1 | F      | IN     |
+|             2 | M      | TX     |
+|             2 | M      | GA     |
+|             1 | F      | GA     |
+|             2 | M      | NY     |
+|             1 | M      | NC     |
+|             1 | F      | TX     |
+|             2 | M      | ONT    |
+|             2 | M      | VA     |
+|             1 | F      | VA     |
+|             1 | F      | VT     |
+|             1 | M      | IL     |
+|             2 | M      | VT     |
+|             2 | M      | OH     |
++---------------+--------+--------+
