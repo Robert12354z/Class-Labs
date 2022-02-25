@@ -1,0 +1,7 @@
+1)db.user.insert({name:"Charlie",age:25,position:"lecturer"})
+2)db.user.insert({name:"Alice",age:20,position:"student",grade:84})
+3)db.user.insert({name:"Bob",age:21,position:"student",grade:89})
+4)db.user.update({name:"Alice"},{$set:{grade:95}})
+5)db.user.remove({name:"Bob"})
+6)db.user.insert({name:"John",age:30,position:"student",grade:94})
+7)db.user.update({position:"student"},{$set:{homeAddress:{street:"1234 Random st.",city:"Los Angeles",state:"CA"}})
