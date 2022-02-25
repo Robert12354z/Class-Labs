@@ -1,0 +1,144 @@
+1) select max(lengthSeconds) from tracks where lengthseconds =all(select lengthseconds from titles where genre ='metal');
++--------------------+
+| max(lengthSeconds) |
++--------------------+
+|                821 |
+
+2)select artistid, artistname,entrydate from artists where entrydate< all(select entrydate from artists where leadsource='directmail');
++----------+-------------+------------+
+| artistid | artistname  | entrydate  |
++----------+-------------+------------+
+|       18 | 21 West Elm | 2003-02-05 |
+|       11 | Highlander  | 2002-08-10 |
++----------+-------------+------------+
+3) select artistid, artistname,entrydate from artists where entrydate< any(select entrydate from artists where leadsource='directmail');
++----------+----------------+------------+
+| artistid | artistname     | entrydate  |
++----------+----------------+------------+
+|        1 | The Neurotics  | 2003-05-14 |
+|        2 | Louis Holiday  | 2003-06-03 |
+|        3 | Word           | 2003-06-08 |
+|        5 | Sonata         | 2003-06-08 |
+|       10 | The Bullets    | 2003-08-10 |
+|       14 | Jose MacArthur | 2003-08-17 |
+|       18 | 21 West Elm    | 2003-02-05 |
+|       11 | Highlander     | 2002-08-10 |
++----------+----------------+------------+
+4) select artistname,max(entrydate) from artists;
++---------------+----------------+	
+| artistname    | max(entrydate) |
++---------------+----------------+
+| The Neurotics | 2003-12-03     |
++---------------+----------------+
+5) select tracktitle from tracks where titleID = any(select titleID from titles where genre='alternative');
++-----------------------+
+| tracktitle            |
++-----------------------+
+| Hottie                |
+| Goodtime March        |
+| TV Day                |
+| Call Me an Idiot      |
+| 25                    |
+| Palm                  |
+| Front Door            |
+| Where's the Rain      |
+| Bob's Dream           |
+| My Wizard             |
+| Third's Folly         |
+| Leather               |
+| Hot Cars Cool Nights  |
+| Music in You          |
+| Don't Care About Time |
+| Kiss                  |
+| Pizza Box             |
+| Goodbye               |
+| Song 1                |
+| Song 2                |
+| Song 3                |
+| Song 4                |
+| Song 5                |
+| Song 6                |
+| Song 7                |
+| Song 8                |
+| Song 8 and 1/2        |
++-----------------------+
+6)select genre from genre where genre != all(select genre from titles);
++-------+
+| genre |
++-------+
+| R&B   |
+| rap   |
+| pop   |
++-------+
+7)select tracktitle, lengthseconds from tracks where lengthseconds> all(select lengthseconds from tracks where titleid = (select titleid from titles where genre = 'metal'));
++--------------------------------+---------------+
+| tracktitle                     | lengthseconds |
++--------------------------------+---------------+
+| 25                             |           402 |
+| Violin Sonata No. 1 in D Major |           511 |
+| Violin Sonata No. 2 in A Major |           438 |
+| Violin Sonata No. 4 in E Minor |           821 |
+| Piano Sonata No. 1             |           493 |
+| Clarinet Sonata in E Flat      |           399 |
+| Improv 34                      |           441 |
++--------------------------------+---------------+
+8) select tracktitle from tracks where lengthseconds = any(select max(lengthseconds) from tracks);
++--------------------------------+
+| tracktitle                     |
++--------------------------------+
+| Violin Sonata No. 4 in E Minor |
++--------------------------------+
+11)  select title, tracktitle from titles, tracks where titles.titleid= tracks.titleId and studioID=1;
++--------------------+------------------+
+| title              | tracktitle       |
++--------------------+------------------+
+| Meet the Neurotics | Hottie           |
+| Meet the Neurotics | Goodtime March   |
+| Meet the Neurotics | TV Day           |
+| Meet the Neurotics | Call Me an Idiot |
+| Meet the Neurotics | 25               |
+| Meet the Neurotics | Palm             |
+| Meet the Neurotics | Front Door       |
+| Meet the Neurotics | Wheres the Rain |
+| Neurotic Sequel    | Song 1           |
+| Neurotic Sequel    | Song 2           |
+| Neurotic Sequel    | Song 3           |
+| Neurotic Sequel    | Song 4           |
+| Neurotic Sequel    | Song 5           |
+| Neurotic Sequel    | Song 6           |
+| Neurotic Sequel    | Song 7           |
+| Neurotic Sequel    | Song 8           |
+| Neurotic Sequel    | Song 8 and 1/2   |
++--------------------+------------------+
+12)select title, studioname from titles, studios ;
++--------------------+---------------------+
+| title              | studioname          |
++--------------------+---------------------+
+| Meet the Neurotics | MakeTrax            |
+| Meet the Neurotics | Lone Star Recording |
+| Meet the Neurotics | Pacific Rim         |
+| Smell the Glove    | MakeTrax            |
+| Smell the Glove    | Lone Star Recording |
+| Smell the Glove    | Pacific Rim         |
+| Time Flies         | MakeTrax            |
+| Time Flies         | Lone Star Recording |
+| Time Flies         | Pacific Rim         |
+| Neurotic Sequel    | MakeTrax            |
+| Neurotic Sequel    | Lone Star Recording |
+| Neurotic Sequel    | Pacific Rim         |
+| Sonatas            | MakeTrax            |
+| Sonatas            | Lone Star Recording |
+| Sonatas            | Pacific Rim         |
+| Louis at the Keys  | MakeTrax            |
+| Louis at the Keys  | Lone Star Recording |
+| Louis at the Keys  | Pacific Rim         |
++--------------------+---------------------+
+13) select salespeople.firstname, salespeople.lastname from members,salespeople where members.salesID=salespeople.salesID and members.lastname = 'Alvarez';
+14) select members.firstname,members.lastname, salespeople.firstname, salespeople.lastname from members,salespeople where members.salesID=salespeople.salesId and members.region = 'CA';
++-----------+-----------+-----------+----------+
+| firstname | lastname  | firstname | lastname |
++-----------+-----------+-----------+----------+
+| Jose      | MacArthur | Bob       | Bentley  |
++-----------+-----------+-----------+----------+
+15)select artistname,count(title) from artists,titles where artists.artistId=titles.artistid group by artistname;
+16)select title, count(tracktitle) from tracks,titles where titles.titleid=tracks.titleid group by title;
