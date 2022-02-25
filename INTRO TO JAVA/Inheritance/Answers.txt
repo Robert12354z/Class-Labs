@@ -1,0 +1,20 @@
+Question 1: Which of the following is a programning language?
+Answer: Java
+Question 2:"Java is a ________ language"
+Answer: programming
+Question 3: We are learning _____ in Keenan's Class 
+Answer: Java
+Question 4:The author ___________ wrote the book IT
+Answer:Stephen King
+Question 5:The Beatles are a ___________ band
+Answer: British
+Question 6: Diablo is a ________ game
+Answer: mobile
+Question 7: Which of the following is a mobile RPG genre game?
+Answer: Diablo
+Question 8: Which character is a Tank in Overwatch?
+Answer:Winston
+Question 9: Who is the fastest videogame character?
+Answer: Sonic
+Question 10: Which is a type of cookie?
+Answer: Oatmeal
