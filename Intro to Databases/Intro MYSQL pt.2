@@ -1,0 +1,52 @@
+1) select count(title_name),min(price),max(price),avg(sales) from titles where type = 'history';
++-------------------+------------+------------+------------+
+| count(title_name) | min(price) | max(price) | avg(sales) |
++-------------------+------------+------------+------------+
+|                 3 |      19.95 |      29.99 |  6866.3333 |
++-------------------+------------+------------+------------+
+2)select count(title_name),avg(pages) from titles where pub_id='P01';
++-------------------+------------+
+| count(title_name) | avg(pages) |
++-------------------+------------+
+|                 4 |   362.3333 |
++-------------------+------------+
+3)select type,count(title_name), avg(price) from titles group by type order by count(*);
++------------+-------------------+------------+
+| type       | count(title_name) | avg(price) |
++------------+-------------------+------------+
+| computer   |                 1 |  39.950000 |
+| children   |                 2 |  11.975000 |
+| history    |                 3 |  23.976667 |
+| psychology |                 3 |   9.310000 |
+| biography  |                 4 |  18.963333 |
++------------+-------------------+------------+
+5 rows in set (0.01 sec)
+4) select Pub_name from publishers,titles having  min(length(title_name));
++-------------------+
+| Pub_name          |
++-------------------+
+| Abatis Publishers |
++-------------------+
+5)select au_id as 'ID', mid(phone,1,3) as 'Area Code',mid(phone,5,8) as 'Phone Number' from authors;
++-----+-----------+--------------+
+| ID  | Area Code | Phone Number |
++-----+-----------+--------------+
+| A01 | 718       | 496-7223     |
+| A02 | 303       | 986-7020     |
+| A03 | 415       | 549-4278     |
+| A04 | 415       | 549-4278     |
+| A05 | 212       | 771-4680     |
+| A06 | 650       | 836-7128     |
+| A07 | 941       | 925-0752     |
++-----+-----------+--------------+
+6) select Concat(substring(au_fname,1,1),'.',au_lname) as "Intials" from authors where au_fname != "" order by au_lname;
++---------------+
+| Intials       |
++---------------+
+| S.Buchman     |
+| W.Heydemark   |
+| H.Hull        |
+| K.Hull        |
+| C.Kells       |
+| P.O'Furniture |
++---------------+
