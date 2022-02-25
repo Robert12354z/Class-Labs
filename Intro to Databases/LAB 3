@@ -1,0 +1,6 @@
+1)insert into artists (ArtistID, ArtistName,City,Region,Country,WebAddress,EntryDate,LeadSource) Values('12','November','New Orleans','LA','USA','www.november.com',CURDATE(),'Directmail');
+2) insert into tracks (titleID, tracknum, tracktitle, lengthseconds, mp3) Values(4,11, 'Spring','150', 1);
+3)update artists set webaddress=concat('www.lyricmusic.com/',artistID) where webaddress is null;
+4)insert into members2 select * from members;
+5) update members2 set workphone= concat('899', substring(Workphone,3,length(workphone))), HomePhone= concat('899',substring(homephone, 3, length(homephone)))  where City="Columbus" and Region="OH"
+6)delete from Members2 where memberID in(select memberID from xrefartistsmembers where artistID=5);
